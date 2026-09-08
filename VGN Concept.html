@@ -1,0 +1,1098 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>VGN Concept · Mr Drone — L'expertise drone à La Réunion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="VGN Concept — services par drone à La Réunion. Agriculture de précision, scan LiDAR 3D, production audiovisuelle.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+          sans: ['Geist', 'system-ui', 'sans-serif'],
+          mono: ['"Geist Mono"', 'ui-monospace', 'monospace'],
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  :root {
+    --bg: #07080f;
+    --bg-2: #0c0e1a;
+    --ink: #f3f3fb;
+    --ink-2: #b4b4c8;
+    --ink-3: #6c6d85;
+    --line: rgba(255,255,255,0.08);
+    --line-2: rgba(255,255,255,0.14);
+    --accent: #4a6cf7;     /* electric blue */
+    --accent-2: #6b8aff;
+    --accent-glow: 74,108,247;
+    --gold: #ffc93c;
+    --gold-2: #ffd76b;
+  }
+
+  html, body { background: var(--bg); color: var(--ink); }
+  body { font-family: 'Geist', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+  .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em; }
+  .font-mono    { font-family: 'Geist Mono', ui-monospace, monospace; }
+
+  /* Background — deep space + subtle nebula */
+  .bg-stage {
+    background:
+      radial-gradient(1100px 700px at 78% -10%, rgba(74,108,247,0.22), transparent 60%),
+      radial-gradient(900px 600px at -10% 40%, rgba(40,60,160,0.18), transparent 60%),
+      radial-gradient(800px 500px at 50% 110%, rgba(74,108,247,0.10), transparent 60%),
+      linear-gradient(180deg, #07080f 0%, #0a0c18 100%);
+  }
+
+  /* Tech grid */
+  .tech-grid {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 80%);
+  }
+  .tech-grid-tight {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Glass */
+  .glass {
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+    border: 1px solid var(--line);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+  .glass-strong {
+    background: linear-gradient(180deg, rgba(20,22,40,0.78), rgba(10,12,24,0.65));
+    border: 1px solid var(--line-2);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+  }
+
+  /* Glow */
+  .glow-blue {
+    box-shadow:
+      0 0 0 1px rgba(var(--accent-glow),0.22),
+      0 18px 60px -18px rgba(var(--accent-glow),0.55),
+      inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .glow-blue-soft {
+    box-shadow: 0 10px 40px -10px rgba(var(--accent-glow),0.35);
+  }
+  .text-glow { text-shadow: 0 0 24px rgba(var(--accent-glow),0.45); }
+
+  /* CTA */
+  .btn { transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-gold {
+    background: linear-gradient(180deg, var(--gold-2), var(--gold));
+    color: #1a1505;
+    box-shadow: 0 0 0 1px rgba(255,201,60,0.4), 0 14px 40px -14px rgba(255,201,60,0.7), inset 0 1px 0 rgba(255,255,255,0.55);
+  }
+  .btn-gold:hover { box-shadow: 0 0 0 1px rgba(255,201,60,0.55), 0 18px 50px -14px rgba(255,201,60,0.9), inset 0 1px 0 rgba(255,255,255,0.6); }
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,0.16);
+    color: var(--ink);
+    background: rgba(255,255,255,0.02);
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.28); }
+  .btn-blue {
+    background: linear-gradient(180deg, #5a7bff, #3a5cef);
+    color: #fff;
+    box-shadow: 0 0 0 1px rgba(74,108,247,0.45), 0 16px 44px -16px rgba(74,108,247,0.85), inset 0 1px 0 rgba(255,255,255,0.18);
+  }
+
+  /* Card hover glow */
+  .card { position: relative; transition: transform .25s ease, border-color .25s ease, background .25s ease; }
+  .card::after {
+    content: ""; position: absolute; inset: -1px; border-radius: inherit; pointer-events: none;
+    background: radial-gradient(420px 280px at var(--mx,50%) var(--my,0%), rgba(var(--accent-glow),0.18), transparent 60%);
+    opacity: 0; transition: opacity .25s ease;
+  }
+  .card:hover { transform: translateY(-3px); border-color: rgba(var(--accent-glow),0.45); }
+  .card:hover::after { opacity: 1; }
+
+  /* Marker line */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  .eyebrow::before {
+    content: ""; width: 28px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent));
+  }
+
+  /* Image-slot polish */
+  image-slot {
+    --slot-border: 1px solid rgba(255,255,255,0.08);
+    --slot-radius: 18px;
+    --slot-bg: linear-gradient(135deg, #0d1023 0%, #131838 60%, #0c0f22 100%);
+  }
+  .slot-fill image-slot::part(placeholder) {
+    color: var(--ink-2);
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+
+  /* Striped placeholder */
+  .stripe {
+    background-image:
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 14px),
+      linear-gradient(135deg, #11132a, #0a0c1c);
+  }
+  .stripe-blue {
+    background-image:
+      repeating-linear-gradient(135deg, rgba(74,108,247,0.10) 0 1px, transparent 1px 12px),
+      linear-gradient(135deg, #131a45, #0a0f30);
+  }
+
+  /* Nav */
+  .nav-link { color: var(--ink-2); transition: color .15s ease; position: relative; }
+  .nav-link:hover { color: var(--ink); }
+  .nav-link::after {
+    content:""; position:absolute; left:0; right:0; bottom:-8px; height:1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    transform: scaleX(0); transition: transform .2s ease;
+  }
+  .nav-link:hover::after { transform: scaleX(1); }
+
+  /* Reveal animation */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* Drone halo */
+  .halo {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(closest-side, rgba(74,108,247,0.55), rgba(74,108,247,0.18) 40%, transparent 70%);
+    filter: blur(20px);
+    animation: pulse 5.5s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: .7; transform: scale(1);} 50% { opacity: 1; transform: scale(1.04);} }
+
+  /* Marquee */
+  .marquee { mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+  .marquee-track { display:flex; gap:64px; animation: scroll 38s linear infinite; }
+  @keyframes scroll { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+
+  /* Process line */
+  .step-num {
+    width: 56px; height: 56px; border-radius: 16px;
+    background: linear-gradient(180deg, rgba(74,108,247,0.18), rgba(74,108,247,0.05));
+    border: 1px solid rgba(74,108,247,0.35);
+    color: #cfd8ff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 20px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 12px 30px -14px rgba(74,108,247,0.55);
+  }
+
+  /* Form field */
+  .field {
+    width: 100%;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    color: var(--ink);
+    padding: 14px 16px;
+    font-family: 'Geist', system-ui, sans-serif;
+    font-size: 14px;
+    transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
+  }
+  .field:focus {
+    outline: none;
+    border-color: rgba(74,108,247,0.55);
+    background: rgba(74,108,247,0.06);
+    box-shadow: 0 0 0 4px rgba(74,108,247,0.12);
+  }
+  .field::placeholder { color: var(--ink-3); }
+
+  /* YouTube bg cover hack — fill a portrait container with a 16:9 video */
+  .yt-bg {
+    position: absolute;
+    top: 50%; left: 50%;
+    /* Width chosen so 16:9 video covers a 4:5 (=0.8) portrait container */
+    width: 178%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1.25);
+    pointer-events: none;
+    border: 0;
+  }
+  .yt-bg-poster {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    animation: kenburns 22s ease-in-out infinite alternate;
+    transform-origin: 60% 40%;
+  }
+  @keyframes kenburns {
+    0%   { transform: scale(1.04); }
+    100% { transform: scale(1.14) translate(-1.5%, -1%); }
+  }
+
+  /* Lightbox */
+  .yt-modal { background: rgba(4,5,12,0.88); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+  .yt-modal[hidden] { display: none !important; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px rgba(74,108,247,0.8); display:inline-block; }
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--line-2), transparent); }
+
+  /* card hover tracking */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>
+</head>
+<body class="bg-stage min-h-screen antialiased overflow-x-hidden">
+
+<!-- ============================== NAV ============================== -->
+<header class="fixed top-0 inset-x-0 z-40">
+  <div class="mx-auto max-w-[1320px] px-5 lg:px-8 pt-4">
+    <div class="glass-strong rounded-2xl flex items-center justify-between pl-3 pr-2 py-2">
+      <a href="#top" class="flex items-center gap-3 pl-2">
+        <span class="relative inline-flex items-center justify-center w-9 h-9 rounded-xl" style="background:linear-gradient(180deg,#1a2052,#0d1230);border:1px solid rgba(74,108,247,0.45);">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#9ab0ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="2.2"></circle>
+            <path d="M12 9.8V5M12 14.2V19M9.8 12H5M14.2 12H19"></path>
+            <circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle>
+            <circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle>
+          </svg>
+        </span>
+        <span class="font-display font-semibold text-[17px] tracking-tight">
+          VGN <span class="text-[color:var(--ink-2)] font-normal">/</span> <span class="text-[color:var(--accent-2)]">Mr&nbsp;Drone</span>
+        </span>
+      </a>
+      <nav class="hidden md:flex items-center gap-9 text-sm">
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#realisations">Réalisations</a>
+        <a class="nav-link" href="#process">Processus</a>
+        <a class="nav-link" href="#apropos">À propos</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="tel:+262692285280" class="hidden sm:inline-flex items-center gap-2 text-[13px] text-[color:var(--ink-2)] hover:text-white pr-3">
+          <span class="dot"></span><span class="font-mono">+262 692 285 280</span>
+        </a>
+        <a href="#contact" class="btn btn-gold inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-[13px] font-semibold">
+          Devis gratuit
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<section id="top" class="relative pt-28 lg:pt-32 pb-24 lg:pb-32 overflow-hidden">
+  <div class="absolute inset-0 tech-grid pointer-events-none"></div>
+  <!-- ambient orbs -->
+  <div class="absolute -top-20 right-[-10%] w-[680px] h-[680px] rounded-full pointer-events-none" style="background:radial-gradient(closest-side, rgba(74,108,247,0.35), transparent 70%); filter: blur(20px);"></div>
+
+  <div class="relative mx-auto max-w-[1320px] px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <!-- LEFT -->
+      <div class="lg:col-span-7">
+        <div class="reveal">
+          <div class="eyebrow mb-6">
+            <span>Île de La Réunion · 974</span>
+            <span class="text-[color:var(--ink-3)]">— Mr Drone</span>
+          </div>
+          <h1 class="font-display font-medium text-[44px] sm:text-[58px] lg:text-[76px] leading-[0.98] tracking-tight">
+            L'expertise drone<br>
+            au service de
+            <span class="relative inline-block">
+              <span class="bg-gradient-to-r from-[#7e96ff] via-[#a5b6ff] to-[#7e96ff] bg-clip-text text-transparent">l'agriculture</span>
+            </span>,<br>
+            du <span class="text-glow">bâtiment</span> et de <span class="italic font-light text-[color:var(--ink-2)]">l'image.</span>
+          </h1>
+          <p class="mt-7 text-[17px] lg:text-[18px] leading-relaxed text-[color:var(--ink-2)] max-w-[560px]">
+            Agriculture de précision · Scan LiDAR 3D · Production audiovisuelle.<br>
+            Un télépilote certifié, des livrables professionnels — partout à La Réunion.
+          </p>
+
+          <div class="mt-9 flex flex-wrap items-center gap-3">
+            <a href="#contact" class="btn btn-gold inline-flex items-center gap-2 rounded-xl px-5 py-3.5 text-[14px] font-semibold">
+              Demander un devis
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#services" class="btn btn-ghost inline-flex items-center gap-2 rounded-xl px-5 py-3.5 text-[14px] font-medium">
+              Découvrir nos services
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </a>
+          </div>
+
+          <!-- Trust strip -->
+          <div class="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4">
+            <div class="flex items-center gap-3">
+              <div class="font-display text-2xl font-semibold">1,9<span class="text-[color:var(--accent-2)]">K</span></div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-[color:var(--ink-2)] leading-tight">followers<br>réseaux sociaux</div>
+            </div>
+            <div class="w-px h-8 bg-white/10"></div>
+            <div class="flex items-center gap-3">
+              <div class="font-display text-2xl font-semibold">78</div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-[color:var(--ink-2)] leading-tight">réalisations<br>livrées</div>
+            </div>
+            <div class="w-px h-8 bg-white/10"></div>
+            <div class="flex items-center gap-3">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffc93c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.39 4.84L20 8l-4 3.9.95 5.52L12 15.27 7.05 17.4 8 11.9 4 8l5.61-1.16L12 2z"/></svg>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-[color:var(--ink-2)] leading-tight">Certifié<br>télépilote DGAC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT visual -->
+      <div class="lg:col-span-5 reveal">
+        <div class="relative">
+          <!-- backdrop landscape -->
+          <div class="relative aspect-[4/5] w-full max-w-[520px] mx-auto rounded-[28px] overflow-hidden glass group">
+            <!-- YouTube background showreel -->
+            <div class="absolute inset-0 overflow-hidden">
+              <iframe
+                id="heroPlayer"
+                class="yt-bg"
+                src="https://www.youtube.com/embed/e8mLIa8Hrws?si=0PQ3lGiG8R5fckXG&enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=e8mLIa8Hrws&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1&start=18"
+                title="VGN Concept · showreel"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+              <!-- Poster fallback behind the iframe — visible if embed fails -->
+              <img
+                src="https://i.ytimg.com/vi/e8mLIa8Hrws/maxresdefault.jpg"
+                onerror="this.src='https://i.ytimg.com/vi/e8mLIa8Hrws/hqdefault.jpg'"
+                alt=""
+                aria-hidden="true"
+                class="yt-bg-poster">
+            </div>
+            <!-- frosted overlay -->
+            <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg, rgba(7,8,15,0.05) 0%, rgba(7,8,15,0.30) 55%, rgba(7,8,15,0.85) 100%);"></div>
+
+            <!-- HUD corners -->
+            <div class="absolute top-4 left-4 right-4 flex justify-between font-mono text-[10px] tracking-widest text-white/70 uppercase pointer-events-none">
+              <span>· LIVE · SHOWREEL</span>
+              <span>LAT -21.115 · LON 55.536</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 flex justify-between font-mono text-[10px] tracking-widest text-white/60 uppercase pointer-events-none">
+              <span>ALT 142m</span>
+              <span>4K · 60fps</span>
+            </div>
+
+            <!-- Play button -->
+            <button class="absolute inset-0 flex items-center justify-center" data-yt="e8mLIa8Hrws" data-yt-start="18" aria-label="Lire le showreel avec son">
+              <span class="relative w-[112px] h-[112px] rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                    style="background:rgba(10,12,24,0.55);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.18);box-shadow:0 0 0 1px rgba(74,108,247,0.5), 0 22px 60px -18px rgba(74,108,247,0.85), inset 0 1px 0 rgba(255,255,255,0.1);">
+                <span class="absolute inset-0 rounded-full halo"></span>
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="#fff" style="margin-left:4px;filter:drop-shadow(0 4px 12px rgba(74,108,247,0.6));"><path d="M8 5v14l11-7z"/></svg>
+                <span class="absolute -bottom-9 left-1/2 -translate-x-1/2 font-mono text-[10px] tracking-widest uppercase text-white/80 whitespace-nowrap">Lire avec son</span>
+              </span>
+            </button>
+
+            <!-- floating chip -->
+            <div class="absolute left-4 bottom-14 glass-strong rounded-xl px-3 py-2 flex items-center gap-2 pointer-events-none">
+              <span class="dot"></span>
+              <span class="font-mono text-[10.5px] tracking-widest uppercase text-white/80">Mission active · St-Paul</span>
+            </div>
+          </div>
+
+          <!-- floating spec card -->
+          <div class="hidden sm:block absolute -left-6 lg:-left-10 top-1/3 glass-strong rounded-2xl p-4 w-[220px] glow-blue-soft">
+            <div class="eyebrow mb-2"><span>Précision</span></div>
+            <div class="font-display text-[28px] font-medium leading-none">±2<span class="text-[color:var(--accent-2)]">cm</span></div>
+            <div class="font-mono text-[10.5px] tracking-widest uppercase text-[color:var(--ink-2)] mt-2">RTK · GNSS</div>
+          </div>
+          <div class="hidden sm:block absolute -right-4 lg:-right-8 bottom-10 glass-strong rounded-2xl p-4 w-[220px] glow-blue-soft">
+            <div class="eyebrow mb-2"><span>Capteur</span></div>
+            <div class="font-display text-[28px] font-medium leading-none">LiDAR<span class="text-[color:var(--accent-2)]">·3D</span></div>
+            <div class="font-mono text-[10.5px] tracking-widest uppercase text-[color:var(--ink-2)] mt-2">240k pts/s</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marquee partners / sectors -->
+    <div class="mt-20 marquee overflow-hidden">
+      <div class="marquee-track font-mono text-[11.5px] tracking-[0.22em] uppercase text-[color:var(--ink-2)]">
+        <div class="flex items-center gap-16 shrink-0">
+          <span>· Agriculture</span><span>· BTP & Architecture</span><span>· Immobilier</span>
+          <span>· Production cinéma</span><span>· Événementiel</span><span>· Inspection technique</span>
+          <span>· Topographie</span><span>· Communication</span>
+        </div>
+        <div class="flex items-center gap-16 shrink-0" aria-hidden="true">
+          <span>· Agriculture</span><span>· BTP & Architecture</span><span>· Immobilier</span>
+          <span>· Production cinéma</span><span>· Événementiel</span><span>· Inspection technique</span>
+          <span>· Topographie</span><span>· Communication</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SERVICES / EXPERTISES ============================== -->
+<section id="services" class="relative py-24 lg:py-32">
+  <div class="absolute inset-0 tech-grid pointer-events-none opacity-60"></div>
+  <div class="relative mx-auto max-w-[1320px] px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 items-end mb-14 reveal">
+      <div class="lg:col-span-7">
+        <div class="eyebrow mb-5"><span>Nos 3 expertises</span></div>
+        <h2 class="font-display text-[40px] lg:text-[56px] leading-[1.02] tracking-tight font-medium">
+          Trois métiers, un pilote.<br>
+          <span class="text-[color:var(--ink-2)]">Une seule exigence : la précision.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-5">
+        <p class="text-[color:var(--ink-2)] text-[15.5px] leading-relaxed max-w-md">
+          De la canne à sucre du Sud sauvage aux chantiers de Saint-Denis, nous opérons drones thermiques, LiDAR et caméras cinéma sur des missions exigeantes — toujours avec un livrable propre.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <!-- CARD 1 -->
+      <article class="card glass rounded-3xl p-7 lg:p-8 flex flex-col h-full" data-hover>
+        <header class="flex items-start justify-between mb-7">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-[color:var(--ink-3)]">01 / Agro</span>
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-2xl" style="background:linear-gradient(180deg,rgba(74,108,247,0.18),rgba(74,108,247,0.04));border:1px solid rgba(74,108,247,0.32);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a5b6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12c-3-2-4-6-2-9 3 1 5 5 2 9z"/><path d="M12 12c3-2 4-6 2-9-3 1-5 5-2 9z"/><path d="M5 18c1-2 4-3 7-3M19 18c-1-2-4-3-7-3"/></svg>
+          </span>
+        </header>
+        <h3 class="font-display text-[26px] lg:text-[28px] font-medium leading-tight tracking-tight">Agriculture de précision</h3>
+        <p class="mt-3 text-[14.5px] text-[color:var(--ink-2)] leading-relaxed">
+          Épandage liquide & solide, blanchiment de serres. Précision centimétrique, gain de temps mesurable, économie d'intrants.
+        </p>
+        <ul class="mt-6 space-y-2 text-[13.5px] text-[color:var(--ink-2)]">
+          <li class="flex items-center gap-3"><span class="dot"></span> Cartographie NDVI</li>
+          <li class="flex items-center gap-3"><span class="dot"></span> Pulvérisation ciblée 16 L</li>
+          <li class="flex items-center gap-3"><span class="dot"></span> Suivi parcellaire saisonnier</li>
+        </ul>
+        <div class="mt-auto pt-8 flex items-center justify-between">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-[color:var(--ink-3)]">DJI Agras T40</span>
+          <a href="#contact" class="inline-flex items-center gap-1.5 text-[13.5px] font-medium text-[color:var(--accent-2)] hover:text-white transition">
+            En savoir plus
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- CARD 2 (featured) -->
+      <article class="card rounded-3xl p-7 lg:p-8 flex flex-col h-full relative overflow-hidden" data-hover
+        style="background:linear-gradient(180deg, rgba(74,108,247,0.16), rgba(74,108,247,0.04));border:1px solid rgba(74,108,247,0.35);">
+        <div class="absolute inset-0 tech-grid-tight pointer-events-none opacity-25"></div>
+        <header class="relative flex items-start justify-between mb-7">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-white/70">02 / BIM</span>
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-2xl" style="background:linear-gradient(180deg,#1a2052,#0d1230);border:1px solid rgba(74,108,247,0.55);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cfd8ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg>
+          </span>
+        </header>
+        <h3 class="relative font-display text-[26px] lg:text-[28px] font-medium leading-tight tracking-tight">Scan to BIM · LiDAR 3D</h3>
+        <p class="relative mt-3 text-[14.5px] text-white/75 leading-relaxed">
+          Relevés LiDAR pour architectes et BTP. Nuage de points haute densité, livrables Revit / IFC / e57 prêts à modéliser.
+        </p>
+        <ul class="relative mt-6 space-y-2 text-[13.5px] text-white/80">
+          <li class="flex items-center gap-3"><span class="dot"></span> Nuage 240k pts/sec</li>
+          <li class="flex items-center gap-3"><span class="dot"></span> Précision ±2 cm RTK</li>
+          <li class="flex items-center gap-3"><span class="dot"></span> Maquette BIM LOD 200–300</li>
+        </ul>
+        <div class="relative mt-auto pt-8 flex items-center justify-between">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-white/55">DJI L2 · Mavic 3E</span>
+          <a href="#contact" class="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-white hover:text-[color:var(--accent-2)] transition">
+            Voir un livrable
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <!-- corner badge -->
+        <span class="absolute top-6 right-20 font-mono text-[10px] tracking-widest uppercase text-[color:var(--gold)]">★ Phare</span>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="card glass rounded-3xl p-7 lg:p-8 flex flex-col h-full" data-hover>
+        <header class="flex items-start justify-between mb-7">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-[color:var(--ink-3)]">03 / Image</span>
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-2xl" style="background:linear-gradient(180deg,rgba(74,108,247,0.18),rgba(74,108,247,0.04));border:1px solid rgba(74,108,247,0.32);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a5b6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></svg>
+          </span>
+        </header>
+        <h3 class="font-display text-[26px] lg:text-[28px] font-medium leading-tight tracking-tight">Production audiovisuelle</h3>
+        <p class="mt-3 text-[14.5px] text-[color:var(--ink-2)] leading-relaxed">
+          Prises de vue aériennes cinéma, immobilier, événementiel, communication. De l'idée à la masterisation 4K.
+        </p>
+        <ul class="mt-6 space-y-2 text-[13.5px] text-[color:var(--ink-2)]">
+          <li class="flex items-center gap-3"><span class="dot"></span> 4K 60p · LOG D</li>
+          <li class="flex items-center gap-3"><span class="dot"></span> Étalonnage couleur</li>
+          <li class="flex items-center gap-3"><span class="dot"></span> Montage + livrables réseaux</li>
+        </ul>
+        <div class="mt-auto pt-8 flex items-center justify-between">
+          <span class="font-mono text-[11px] uppercase tracking-widest text-[color:var(--ink-3)]">Mavic 3 Cine</span>
+          <a href="#contact" class="inline-flex items-center gap-1.5 text-[13.5px] font-medium text-[color:var(--accent-2)] hover:text-white transition">
+            Voir le showreel
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STATS BAND ============================== -->
+<section class="relative py-16 lg:py-20">
+  <div class="mx-auto max-w-[1320px] px-5 lg:px-8">
+    <div class="glass-strong rounded-3xl px-6 sm:px-10 py-10 lg:py-14 relative overflow-hidden">
+      <div class="absolute inset-0 tech-grid-tight opacity-20 pointer-events-none"></div>
+      <div class="absolute -left-32 top-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full" style="background:radial-gradient(closest-side, rgba(74,108,247,0.35), transparent 70%); filter: blur(10px);"></div>
+
+      <div class="relative grid md:grid-cols-4 gap-y-10">
+        <div class="text-center md:text-left md:px-6 md:border-r border-white/8">
+          <div class="font-display text-[56px] lg:text-[68px] font-medium leading-none tracking-tight">78</div>
+          <div class="font-mono text-[11px] tracking-widest uppercase text-[color:var(--ink-2)] mt-3">Missions réalisées</div>
+        </div>
+        <div class="text-center md:text-left md:px-6 md:border-r border-white/8">
+          <div class="font-display text-[56px] lg:text-[68px] font-medium leading-none tracking-tight">1,9<span class="text-[color:var(--accent-2)]">K</span></div>
+          <div class="font-mono text-[11px] tracking-widest uppercase text-[color:var(--ink-2)] mt-3">Abonnés actifs</div>
+        </div>
+        <div class="text-center md:text-left md:px-6 md:border-r border-white/8">
+          <div class="font-display text-[56px] lg:text-[68px] font-medium leading-none tracking-tight">100<span class="text-[color:var(--ink-2)]">%</span></div>
+          <div class="font-mono text-[11px] tracking-widest uppercase text-[color:var(--ink-2)] mt-3">Local · Réunion 974</div>
+        </div>
+        <div class="text-center md:text-left md:px-6">
+          <div class="font-display text-[56px] lg:text-[68px] font-medium leading-none tracking-tight">04</div>
+          <div class="font-mono text-[11px] tracking-widest uppercase text-[color:var(--ink-2)] mt-3">Drones pros certifiés</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== RÉALISATIONS ============================== -->
+<section id="realisations" class="relative py-24 lg:py-32">
+  <div class="mx-auto max-w-[1320px] px-5 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 reveal">
+      <div>
+        <div class="eyebrow mb-5"><span>Réalisations · sélection 2024–2026</span></div>
+        <h2 class="font-display text-[40px] lg:text-[56px] leading-[1.02] tracking-tight font-medium">
+          Du <span class="text-[color:var(--accent-2)]">cratère</span> au champ de canne.
+        </h2>
+      </div>
+      <a href="#contact" class="inline-flex items-center gap-2 text-[13.5px] font-medium text-[color:var(--ink-2)] hover:text-white transition">
+        <span class="font-mono uppercase tracking-widest text-[11px]">Voir toutes (78)</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <!-- editorial mosaic -->
+    <div class="grid grid-cols-6 gap-4 lg:gap-5 auto-rows-[160px] lg:auto-rows-[200px]">
+      <!-- 1 wide -->
+      <button class="card group col-span-6 md:col-span-4 row-span-2 rounded-3xl overflow-hidden relative text-left" data-yt="e8mLIa8Hrws" data-yt-start="18" data-yt-si="0PQ3lGiG8R5fckXG" data-hover>
+        <img src="https://i.ytimg.com/vi/e8mLIa8Hrws/maxresdefault.jpg" alt="Showreel VGN" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://i.ytimg.com/vi/e8mLIa8Hrws/hqdefault.jpg'">
+        <div class="absolute inset-0" style="background:linear-gradient(180deg, transparent 35%, rgba(7,8,15,0.92) 100%);"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <span class="w-20 h-20 rounded-full flex items-center justify-center" style="background:rgba(10,12,24,0.6);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.18);box-shadow:0 0 0 1px rgba(74,108,247,0.45), 0 18px 50px -14px rgba(74,108,247,0.8);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" style="margin-left:3px;"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </div>
+        <div class="absolute left-6 bottom-6 right-6">
+          <div class="font-mono text-[10.5px] tracking-widest uppercase text-white/70">Showreel · VGN Concept</div>
+          <div class="font-display text-[26px] lg:text-[32px] font-medium mt-1 leading-tight">Le best-of — La Réunion vue du ciel</div>
+        </div>
+        <div class="absolute top-5 left-5 glass-strong rounded-lg px-2.5 py-1 font-mono text-[10px] tracking-widest uppercase text-white/85">▶ Lire</div>
+      </button>
+      <!-- 2 -->
+      <a class="card group col-span-3 md:col-span-2 rounded-3xl overflow-hidden relative" href="#" data-hover>
+        <image-slot id="r2" placeholder="ÉPANDAGE · CANNE À SUCRE" style="width:100%;height:100%;display:block;border-radius:0;" shape="rect"></image-slot>
+        <div class="absolute inset-0" style="background:linear-gradient(180deg, transparent 50%, rgba(7,8,15,0.9) 100%);"></div>
+        <div class="absolute left-5 bottom-4 right-5">
+          <div class="font-mono text-[10px] tracking-widest uppercase text-white/70">Agro · Le Tampon</div>
+          <div class="font-display text-[18px] font-medium mt-0.5">Épandage canne · 24 ha</div>
+        </div>
+      </a>
+      <!-- 3 -->
+      <button class="card group col-span-3 md:col-span-2 rounded-3xl overflow-hidden relative text-left" data-yt="F0zUQ0flwvQ" data-yt-start="480" data-yt-si="wDw-kBRmIZ1VLHcn" data-hover>
+        <img src="https://i.ytimg.com/vi/F0zUQ0flwvQ/maxresdefault.jpg" alt="Maquette 3D BIM" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://i.ytimg.com/vi/F0zUQ0flwvQ/hqdefault.jpg'">
+        <div class="absolute inset-0" style="background:linear-gradient(180deg, transparent 45%, rgba(7,8,15,0.92) 100%);"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <span class="w-14 h-14 rounded-full flex items-center justify-center" style="background:rgba(10,12,24,0.6);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.18);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" style="margin-left:2px;"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </div>
+        <div class="absolute top-3 left-3 glass-strong rounded-md px-2 py-0.5 font-mono text-[9px] tracking-widest uppercase text-white/85">▶ Vidéo</div>
+        <div class="absolute left-5 bottom-4 right-5">
+          <div class="font-mono text-[10px] tracking-widest uppercase text-white/70">BIM · Scan LiDAR</div>
+          <div class="font-display text-[18px] font-medium mt-0.5">Maquette 3D BIM</div>
+        </div>
+      </button>
+      <!-- 4 -->
+      <button class="card group col-span-3 md:col-span-2 rounded-3xl overflow-hidden relative text-left" data-yt="iB9RfGEdKOs" data-yt-si="T9dBgoS-puhgeKzR" data-hover>
+        <img src="https://i.ytimg.com/vi/iB9RfGEdKOs/maxresdefault.jpg" alt="Immobilier audiovisuel" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://i.ytimg.com/vi/iB9RfGEdKOs/hqdefault.jpg'">
+        <div class="absolute inset-0" style="background:linear-gradient(180deg, transparent 45%, rgba(7,8,15,0.92) 100%);"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <span class="w-14 h-14 rounded-full flex items-center justify-center" style="background:rgba(10,12,24,0.6);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.18);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" style="margin-left:2px;"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </div>
+        <div class="absolute top-3 left-3 glass-strong rounded-md px-2 py-0.5 font-mono text-[9px] tracking-widest uppercase text-white/85">▶ Vidéo</div>
+        <div class="absolute left-5 bottom-4 right-5">
+          <div class="font-mono text-[10px] tracking-widest uppercase text-white/70">Immobilier · Audiovisuel</div>
+          <div class="font-display text-[18px] font-medium mt-0.5">Aérien immobilier</div>
+        </div>
+      </button>
+      <!-- 5 -->
+      <a class="card group col-span-3 md:col-span-2 rounded-3xl overflow-hidden relative" href="#" data-hover>
+        <image-slot id="r5" placeholder="MARIAGE · ÉVÉNEMENT" style="width:100%;height:100%;display:block;border-radius:0;" shape="rect"></image-slot>
+        <div class="absolute inset-0" style="background:linear-gradient(180deg, transparent 50%, rgba(7,8,15,0.9) 100%);"></div>
+        <div class="absolute left-5 bottom-4 right-5">
+          <div class="font-mono text-[10px] tracking-widest uppercase text-white/70">Événement · St-Gilles</div>
+          <div class="font-display text-[18px] font-medium mt-0.5">Mariage — aftermovie</div>
+        </div>
+      </a>
+      <!-- 6 -->
+      <button class="card group col-span-3 md:col-span-2 rounded-3xl overflow-hidden relative text-left" data-yt="J13LI3Kihoo" data-yt-si="PNU8cdgXp3JhSigh" data-hover>
+        <img src="https://i.ytimg.com/vi/J13LI3Kihoo/maxresdefault.jpg" alt="Blanchiment de serre" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://i.ytimg.com/vi/J13LI3Kihoo/hqdefault.jpg'">
+        <div class="absolute inset-0" style="background:linear-gradient(180deg, transparent 45%, rgba(7,8,15,0.92) 100%);"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <span class="w-14 h-14 rounded-full flex items-center justify-center" style="background:rgba(10,12,24,0.6);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.18);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" style="margin-left:2px;"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </div>
+        <div class="absolute top-3 left-3 glass-strong rounded-md px-2 py-0.5 font-mono text-[9px] tracking-widest uppercase text-white/85">▶ Vidéo</div>
+        <div class="absolute left-5 bottom-4 right-5">
+          <div class="font-mono text-[10px] tracking-widest uppercase text-white/70">Agro · Petite-Île</div>
+          <div class="font-display text-[18px] font-medium mt-0.5">Blanchiment de serres</div>
+        </div>
+      </button>
+    </div>
+
+    <p class="mt-6 font-mono text-[11px] tracking-widest uppercase text-[color:var(--ink-3)] text-center">
+      · Cliquez sur les tuiles vidéo pour lire · Glissez vos photos sur les autres emplacements ·
+    </p>
+  </div>
+</section>
+
+<!-- ============================== POURQUOI / À PROPOS ============================== -->
+<section id="apropos" class="relative py-24 lg:py-32">
+  <div class="absolute inset-0 tech-grid pointer-events-none opacity-50"></div>
+  <div class="relative mx-auto max-w-[1320px] px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5 reveal">
+        <div class="eyebrow mb-5"><span>Pourquoi VGN Concept</span></div>
+        <h2 class="font-display text-[40px] lg:text-[56px] leading-[1.02] tracking-tight font-medium">
+          Un opérateur local,<br>
+          <span class="text-[color:var(--ink-2)]">une exigence pro.</span>
+        </h2>
+        <p class="mt-6 text-[15.5px] leading-relaxed text-[color:var(--ink-2)] max-w-md">
+          Basés à La Réunion, nous comprenons les terrains — pentes, vents alizés, contraintes DGAC en zone tropicale.
+          Chaque mission est planifiée avec un cahier de vol, exécutée par un télépilote certifié et livrée avec des fichiers exploitables.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <span class="glass rounded-full px-4 py-2 text-[12.5px] text-[color:var(--ink-2)]">Assurance pro RC</span>
+          <span class="glass rounded-full px-4 py-2 text-[12.5px] text-[color:var(--ink-2)]">DGAC scenarios S1–S3</span>
+          <span class="glass rounded-full px-4 py-2 text-[12.5px] text-[color:var(--ink-2)]">Devis sous 48h</span>
+          <span class="glass rounded-full px-4 py-2 text-[12.5px] text-[color:var(--ink-2)]">Livrables &lt; 7 jours</span>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4 reveal">
+        <div class="glass rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="step-num text-[15px]" style="width:38px;height:38px;border-radius:11px;">✦</span>
+            <div class="font-display text-[18px] font-medium">Réactivité insulaire</div>
+          </div>
+          <p class="text-[13.5px] text-[color:var(--ink-2)] leading-relaxed">
+            Une intervention sous 72h sur tout le département. Pas d'intermédiaires, pas de sous-traitance.
+          </p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="step-num text-[15px]" style="width:38px;height:38px;border-radius:11px;">◎</span>
+            <div class="font-display text-[18px] font-medium">Matériel certifié</div>
+          </div>
+          <p class="text-[13.5px] text-[color:var(--ink-2)] leading-relaxed">
+            DJI Agras T40, Matrice 350 RTK + L2, Mavic 3 Cine. Capteurs étalonnés, redondance pilote.
+          </p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="step-num text-[15px]" style="width:38px;height:38px;border-radius:11px;">⌖</span>
+            <div class="font-display text-[18px] font-medium">Précision RTK</div>
+          </div>
+          <p class="text-[13.5px] text-[color:var(--ink-2)] leading-relaxed">
+            Géoréférencement centimétrique pour vos livrables BIM et orthophotos exploitables sur SIG.
+          </p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="step-num text-[15px]" style="width:38px;height:38px;border-radius:11px;">▱</span>
+            <div class="font-display text-[18px] font-medium">Livrables propres</div>
+          </div>
+          <p class="text-[13.5px] text-[color:var(--ink-2)] leading-relaxed">
+            Vidéos étalonnées 4K, e57/las/IFC, rapports PDF — formats prêts à exploiter par votre équipe.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROCESSUS ============================== -->
+<section id="process" class="relative py-24 lg:py-32">
+  <div class="relative mx-auto max-w-[1320px] px-5 lg:px-8">
+    <div class="mb-14 reveal">
+      <div class="eyebrow mb-5"><span>Processus</span></div>
+      <h2 class="font-display text-[40px] lg:text-[56px] leading-[1.02] tracking-tight font-medium max-w-[820px]">
+        Quatre étapes. <span class="text-[color:var(--ink-2)]">Zéro mauvaise surprise.</span>
+      </h2>
+    </div>
+
+    <div class="relative grid md:grid-cols-4 gap-5">
+      <!-- connector line desktop -->
+      <div class="hidden md:block absolute left-0 right-0 top-[40px] h-px" style="background:linear-gradient(90deg, transparent 4%, rgba(74,108,247,0.4) 25%, rgba(74,108,247,0.4) 75%, transparent 96%);"></div>
+
+      <div class="relative glass rounded-3xl p-7">
+        <div class="step-num mb-6">01</div>
+        <h3 class="font-display text-[22px] font-medium leading-tight">Brief &amp; cadrage</h3>
+        <p class="mt-3 text-[13.5px] text-[color:var(--ink-2)] leading-relaxed">
+          Appel découverte, objectifs, livrables attendus. Devis détaillé sous 48h.
+        </p>
+        <div class="mt-5 font-mono text-[10px] tracking-widest uppercase text-[color:var(--ink-3)]">Étape · 30 min</div>
+      </div>
+
+      <div class="relative glass rounded-3xl p-7">
+        <div class="step-num mb-6">02</div>
+        <h3 class="font-display text-[22px] font-medium leading-tight">Repérage &amp; vol-plan</h3>
+        <p class="mt-3 text-[13.5px] text-[color:var(--ink-2)] leading-relaxed">
+          Reco terrain, météo, autorisations préfecture. Plan de vol et points de prise validés.
+        </p>
+        <div class="mt-5 font-mono text-[10px] tracking-widest uppercase text-[color:var(--ink-3)]">J–3</div>
+      </div>
+
+      <div class="relative glass rounded-3xl p-7">
+        <div class="step-num mb-6">03</div>
+        <h3 class="font-display text-[22px] font-medium leading-tight">Mission &amp; captation</h3>
+        <p class="mt-3 text-[13.5px] text-[color:var(--ink-2)] leading-relaxed">
+          Exécution du vol par télépilote certifié. Contrôle qualité en bout de chantier.
+        </p>
+        <div class="mt-5 font-mono text-[10px] tracking-widest uppercase text-[color:var(--ink-3)]">Jour J</div>
+      </div>
+
+      <div class="relative glass rounded-3xl p-7" style="background:linear-gradient(180deg, rgba(255,201,60,0.10), rgba(255,201,60,0.02));border:1px solid rgba(255,201,60,0.30);">
+        <div class="step-num mb-6" style="background:linear-gradient(180deg, rgba(255,201,60,0.22), rgba(255,201,60,0.06));border-color:rgba(255,201,60,0.45);color:#ffe39a;box-shadow:0 12px 30px -14px rgba(255,201,60,0.55);">04</div>
+        <h3 class="font-display text-[22px] font-medium leading-tight">Livraison</h3>
+        <p class="mt-3 text-[13.5px] text-white/75 leading-relaxed">
+          Fichiers cloud + revue. Vidéos étalonnées, nuages LiDAR, orthophotos, rapports.
+        </p>
+        <div class="mt-5 font-mono text-[10px] tracking-widest uppercase text-[color:var(--gold)]">&lt; 7 jours</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section id="contact" class="relative py-24 lg:py-32">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute left-1/2 -translate-x-1/2 top-10 w-[1100px] h-[600px] rounded-full" style="background:radial-gradient(closest-side, rgba(74,108,247,0.32), transparent 70%); filter: blur(12px);"></div>
+  </div>
+  <div class="relative mx-auto max-w-[1320px] px-5 lg:px-8">
+    <div class="glass-strong rounded-[32px] overflow-hidden relative">
+      <div class="absolute inset-0 tech-grid-tight opacity-25 pointer-events-none"></div>
+
+      <div class="relative grid lg:grid-cols-12 gap-0">
+        <!-- LEFT -->
+        <div class="lg:col-span-6 p-8 lg:p-14 border-b lg:border-b-0 lg:border-r border-white/8">
+          <div class="eyebrow mb-6"><span>Contact</span></div>
+          <h2 class="font-display text-[44px] lg:text-[64px] leading-[1.0] tracking-tight font-medium">
+            Parlons de<br>
+            <span class="text-[color:var(--accent-2)]">votre projet.</span>
+          </h2>
+          <p class="mt-6 text-[15px] text-[color:var(--ink-2)] leading-relaxed max-w-md">
+            Un devis détaillé sous 48h. WhatsApp pour les urgences, formulaire pour les briefs complets.
+          </p>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/262692285280" class="btn inline-flex items-center justify-center gap-2.5 rounded-xl px-5 py-3.5 text-[14px] font-semibold"
+               style="background:linear-gradient(180deg,#2acc6d,#1faa56);color:#0a1a10;box-shadow:0 0 0 1px rgba(42,204,109,0.45),0 16px 40px -16px rgba(42,204,109,0.75),inset 0 1px 0 rgba(255,255,255,0.35);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.2.8.9-3.1-.2-.3C3.9 14.9 3.5 13.5 3.5 12 3.5 7.3 7.3 3.5 12 3.5S20.5 7.3 20.5 12 16.7 20.2 12 20.2z"/></svg>
+              WhatsApp · réponse rapide
+            </a>
+            <a href="tel:+262692285280" class="btn btn-ghost inline-flex items-center justify-center gap-2.5 rounded-xl px-5 py-3.5 text-[14px] font-medium">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              <span class="font-mono">+262 692 285 280</span>
+            </a>
+          </div>
+
+          <div class="mt-10 grid grid-cols-3 gap-3 max-w-md">
+            <a href="https://linktr.ee/VgnConcept" class="glass rounded-xl px-3 py-3 text-center hover:bg-white/5 transition">
+              <div class="font-mono text-[10px] tracking-widest uppercase text-[color:var(--ink-3)]">Linktree</div>
+              <div class="font-display text-[14px] mt-1">VgnConcept</div>
+            </a>
+            <a href="#" class="glass rounded-xl px-3 py-3 text-center hover:bg-white/5 transition">
+              <div class="font-mono text-[10px] tracking-widest uppercase text-[color:var(--ink-3)]">Instagram</div>
+              <div class="font-display text-[14px] mt-1">@mr.drone</div>
+            </a>
+            <a href="#" class="glass rounded-xl px-3 py-3 text-center hover:bg-white/5 transition">
+              <div class="font-mono text-[10px] tracking-widest uppercase text-[color:var(--ink-3)]">Facebook</div>
+              <div class="font-display text-[14px] mt-1">VGN Concept</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT FORM -->
+        <form class="lg:col-span-6 p-8 lg:p-14 flex flex-col gap-4" onsubmit="event.preventDefault(); alert('Merci ! Nous vous répondons sous 48h.');">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="font-mono text-[10.5px] tracking-widest uppercase text-[color:var(--ink-3)]">Nom &amp; prénom</span>
+              <input class="field mt-2" placeholder="Vincent Grondin" required>
+            </label>
+            <label class="block">
+              <span class="font-mono text-[10.5px] tracking-widest uppercase text-[color:var(--ink-3)]">Email</span>
+              <input type="email" class="field mt-2" placeholder="vous@exemple.re" required>
+            </label>
+          </div>
+          <label class="block">
+            <span class="font-mono text-[10.5px] tracking-widest uppercase text-[color:var(--ink-3)]">Type de mission</span>
+            <select class="field mt-2" style="appearance:none; background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 fill=%22none%22 stroke=%22%23b4b4c8%22 stroke-width=%222%22><path d=%22M2 4l4 4 4-4%22/></svg>');background-repeat:no-repeat;background-position:right 18px center;">
+              <option>Agriculture de précision</option>
+              <option>Scan to BIM / LiDAR 3D</option>
+              <option>Production audiovisuelle</option>
+              <option>Immobilier / vente</option>
+              <option>Inspection technique</option>
+              <option>Autre — j'explique en message</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="font-mono text-[10.5px] tracking-widest uppercase text-[color:var(--ink-3)]">Localisation</span>
+            <input class="field mt-2" placeholder="Saint-Paul, Le Tampon, St-Denis…">
+          </label>
+          <label class="block">
+            <span class="font-mono text-[10.5px] tracking-widest uppercase text-[color:var(--ink-3)]">Votre projet</span>
+            <textarea class="field mt-2" rows="4" placeholder="Décrivez la mission, la surface, vos contraintes, vos délais…"></textarea>
+          </label>
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+            <span class="font-mono text-[10.5px] tracking-widest uppercase text-[color:var(--ink-3)]">Réponse &lt; 48h · devis gratuit</span>
+            <button class="btn btn-gold inline-flex items-center gap-2 rounded-xl px-5 py-3 text-[14px] font-semibold">
+              Envoyer le brief
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="relative pt-20 pb-10">
+  <div class="mx-auto max-w-[1320px] px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3">
+          <span class="relative inline-flex items-center justify-center w-10 h-10 rounded-xl" style="background:linear-gradient(180deg,#1a2052,#0d1230);border:1px solid rgba(74,108,247,0.45);">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#9ab0ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="2.2"></circle>
+              <path d="M12 9.8V5M12 14.2V19M9.8 12H5M14.2 12H19"></path>
+              <circle cx="5" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle>
+              <circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle>
+            </svg>
+          </span>
+          <div>
+            <div class="font-display text-[18px] font-semibold">VGN Concept</div>
+            <div class="font-mono text-[10.5px] tracking-widest uppercase text-[color:var(--ink-2)]">Mr Drone · La Réunion</div>
+          </div>
+        </div>
+        <p class="mt-6 text-[14px] text-[color:var(--ink-2)] leading-relaxed max-w-sm">
+          Studio drone indépendant basé à La Réunion. Agriculture, BIM, image — opéré par télépilote certifié DGAC.
+        </p>
+      </div>
+
+      <div class="lg:col-span-2">
+        <div class="font-mono text-[10.5px] tracking-widest uppercase text-[color:var(--ink-3)] mb-4">Services</div>
+        <ul class="space-y-2 text-[14px] text-[color:var(--ink-2)]">
+          <li><a class="hover:text-white" href="#services">Agriculture</a></li>
+          <li><a class="hover:text-white" href="#services">Scan to BIM</a></li>
+          <li><a class="hover:text-white" href="#services">Audiovisuel</a></li>
+          <li><a class="hover:text-white" href="#services">Inspection</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-2">
+        <div class="font-mono text-[10.5px] tracking-widest uppercase text-[color:var(--ink-3)] mb-4">Studio</div>
+        <ul class="space-y-2 text-[14px] text-[color:var(--ink-2)]">
+          <li><a class="hover:text-white" href="#apropos">À propos</a></li>
+          <li><a class="hover:text-white" href="#realisations">Réalisations</a></li>
+          <li><a class="hover:text-white" href="#process">Processus</a></li>
+          <li><a class="hover:text-white" href="#contact">Devis</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-3">
+        <div class="font-mono text-[10.5px] tracking-widest uppercase text-[color:var(--ink-3)] mb-4">Contact</div>
+        <ul class="space-y-2 text-[14px] text-[color:var(--ink-2)]">
+          <li><a href="tel:+262692285280" class="hover:text-white font-mono">+262 692 285 280</a></li>
+          <li><a href="https://wa.me/262692285280" class="hover:text-white">WhatsApp</a></li>
+          <li><a href="https://linktr.ee/VgnConcept" class="hover:text-white">linktr.ee/VgnConcept</a></li>
+          <li><a class="hover:text-white" href="#">@mr.drone_vgnconcept</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider mt-14 mb-6"></div>
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+      <div class="font-mono text-[11px] tracking-widest uppercase text-[color:var(--ink-3)]">
+        © 2026 VGN Concept · La Réunion 974 — Tous droits réservés
+      </div>
+      <div class="flex items-center gap-5 font-mono text-[11px] tracking-widest uppercase text-[color:var(--ink-3)]">
+        <a href="#" class="hover:text-white">Mentions légales</a>
+        <a href="#" class="hover:text-white">Confidentialité</a>
+        <a href="#" class="hover:text-white">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================== YOUTUBE LIGHTBOX ============================== -->
+<div id="ytModal" class="yt-modal fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8" hidden role="dialog" aria-modal="true" aria-label="Lecteur vidéo">
+  <button id="ytClose" class="absolute top-5 right-5 sm:top-7 sm:right-7 w-11 h-11 rounded-full flex items-center justify-center text-white/80 hover:text-white transition"
+          style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);backdrop-filter:blur(10px);"
+          aria-label="Fermer">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <div class="relative w-full max-w-[1100px] aspect-video rounded-2xl overflow-hidden glow-blue">
+    <iframe id="ytIframe" class="absolute inset-0 w-full h-full" src="" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/262692285280" class="fixed bottom-5 right-5 z-30 inline-flex items-center justify-center w-14 h-14 rounded-full"
+   style="background:linear-gradient(180deg,#2acc6d,#1faa56);box-shadow:0 0 0 1px rgba(42,204,109,0.5),0 18px 50px -10px rgba(42,204,109,0.65), inset 0 1px 0 rgba(255,255,255,0.35);"
+   aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#0a1a10" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+</a>
+
+<!-- ============================== SCRIPTS ============================== -->
+<script src="image-slot.js"></script>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="tweaks-app.jsx"></script>
+
+<!-- IntersectionObserver reveal + card mouse track -->
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Card glow mouse tracking
+  document.querySelectorAll('[data-hover]').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+      card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+    });
+  });
+
+  // YouTube lightbox
+  const ytModal  = document.getElementById('ytModal');
+  const ytIframe = document.getElementById('ytIframe');
+  function openYt(id, start, si) {
+    if (!id) return;
+    let src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    if (si)    src += '&si=' + si;
+    if (start) src += '&start=' + start;
+    ytIframe.src = src;
+    ytModal.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeYt() {
+    ytIframe.src = '';
+    ytModal.hidden = true;
+    document.documentElement.style.overflow = '';
+  }
+  document.querySelectorAll('[data-yt]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openYt(
+        el.getAttribute('data-yt'),
+        el.getAttribute('data-yt-start'),
+        el.getAttribute('data-yt-si')
+      );
+    });
+  });
+  document.getElementById('ytClose').addEventListener('click', closeYt);
+  ytModal.addEventListener('click', (e) => { if (e.target === ytModal) closeYt(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !ytModal.hidden) closeYt(); });
+
+  // Hero background player — loop from second 18, not from 0
+  (function loadYTAPI(){
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
+  })();
+  window.onYouTubeIframeAPIReady = function() {
+    new YT.Player('heroPlayer', {
+      events: {
+        onStateChange: function(e) {
+          // 0 = ended — seek back to 18s and play again
+          if (e.data === YT.PlayerState.ENDED) {
+            e.target.seekTo(18, true);
+            e.target.playVideo();
+          }
+        }
+      }
+    });
+  };
+
+  // Apply tweak defaults early so the rest of the page reflects them
+  const ROOT = document.documentElement;
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "accent": "#4a6cf7",
+    "accentGlow": "74,108,247",
+    "goldCta": true,
+    "showGlow": true,
+    "showGrid": true,
+    "heroIntensity": 1.0
+  }/*EDITMODE-END*/;
+
+  function applyTweaks(t) {
+    ROOT.style.setProperty('--accent', t.accent);
+    ROOT.style.setProperty('--accent-glow', t.accentGlow);
+    ROOT.style.setProperty('--accent-2', t.accent);
+    document.body.classList.toggle('no-glow', !t.showGlow);
+    document.body.classList.toggle('no-grid', !t.showGrid);
+  }
+  applyTweaks(TWEAK_DEFAULTS);
+
+  // expose to React panel
+  window.__VGN_TWEAK_DEFAULTS__ = TWEAK_DEFAULTS;
+  window.__VGN_APPLY_TWEAKS__ = applyTweaks;
+</script>
+
+<style>
+  body.no-glow .glow-blue,
+  body.no-glow .glow-blue-soft,
+  body.no-glow .halo { box-shadow: none !important; }
+  body.no-glow .halo { display: none; }
+  body.no-glow .text-glow { text-shadow: none; }
+  body.no-grid .tech-grid,
+  body.no-grid .tech-grid-tight { background-image: none !important; }
+</style>
+
+</body>
+</html>

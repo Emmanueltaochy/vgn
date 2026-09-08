@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Agriculture de précision par drone · VGN Concept — La Réunion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Épandage liquide et solide, blanchiment de serres, cartographie NDVI par drone à La Réunion. VGN Concept — télépilote certifié DGAC.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vgn.css">
+</head>
+<body>
+<div id="grain"></div>
+
+<!-- ═══ NAV ═══ -->
+<header id="nav">
+  <div class="mx-auto max-w-[1500px] px-6 lg:px-12 py-5 flex items-center justify-between">
+    <a href="VGN%20Concept%20-%20Cinematique.html" class="flex items-center gap-3.5">
+      <img class="mark" src="assets/vgn-mark.png" alt="">
+      <span class="flex flex-col leading-none">
+        <span class="serif text-[23px]">VGN Concept</span>
+        <span class="label mt-1" style="font-size:9px;letter-spacing:.3em">Mr Drone · 974</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-6 xl:gap-9 label">
+      <a class="ul ul-on" href="service-agriculture.html" style="color:var(--accent)">Agriculture</a>
+      <a class="ul" href="service-scan-3d.html">Numérisation 3D</a>
+      <a class="ul" href="service-audiovisuel.html">Audiovisuel</a>
+      <a class="ul" href="VGN%20Concept%20-%20Cinematique.html#photogrammes">Photogrammes</a>
+      <a class="ul" href="VGN%20Concept%20-%20Cinematique.html#studio">Studio</a>
+      <a class="ul" href="#devis">Contact</a>
+    </nav>
+    <div class="flex items-center gap-5">
+      <a href="tel:+262692285280" class="hidden xl:inline label ul">+262 692 285 280</a>
+      <a href="#devis" class="pill">Devis</a>
+    </div>
+  </div>
+</header>
+<div id="navSentinel" style="position:absolute;top:90px;left:0;width:1px;height:1px;pointer-events:none"></div>
+
+<!-- ═══ HERO ═══ -->
+<section class="relative h-[74svh] min-h-[520px] overflow-hidden vig grp">
+  <div class="absolute inset-0 overflow-hidden">
+    <iframe id="heroPlayer" class="vfill" data-start="0"
+      src="https://www.youtube.com/embed/J13LI3Kihoo?si=PNU8cdgXp3JhSigh&enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=J13LI3Kihoo&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1"
+      title="Blanchiment de serres par drone" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <img class="poster kb" src="https://i.ytimg.com/vi/J13LI3Kihoo/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/J13LI3Kihoo/hqdefault.jpg'" alt="" aria-hidden="true">
+  </div>
+  <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(10,10,10,.95) 0%,rgba(10,10,10,.4) 45%,rgba(10,10,10,.62) 100%)"></div>
+  <div class="lb-bar top-0"></div><div class="lb-bar bottom-0"></div>
+  <button class="absolute inset-0 z-10 cursor-pointer" data-yt="J13LI3Kihoo" data-yt-si="PNU8cdgXp3JhSigh" aria-label="Lire la vidéo avec le son"></button>
+
+  <div class="absolute inset-0 z-20 pointer-events-none flex flex-col justify-end">
+    <div class="mx-auto w-full max-w-[1500px] px-6 lg:px-12 pb-[124px] lg:pb-[92px]">
+      <div class="crumb rv mb-7"><a href="VGN%20Concept%20-%20Cinematique.html" class="pointer-events-auto">Accueil</a> <span style="color:var(--ink-3)">/</span> Agriculture</div>
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-7 rv">
+          <span class="bar mb-7"></span>
+          <h1 class="serif text-[40px] sm:text-[56px] lg:text-[74px] leading-[.96]">
+            Agriculture<br>de <em class="italic" style="color:var(--accent)">précision</em>
+          </h1>
+        </div>
+        <div class="lg:col-span-4 lg:col-start-9 rv rv-d2 lg:pb-3">
+          <p class="text-[15px] leading-relaxed" style="color:var(--ink-2)">
+            Le drone passe là où le tracteur ne passe plus : pentes, sols gorgés d'eau, parcelles morcelées. Épandage, blanchiment, cartographie.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute z-20 right-6 lg:right-12 bottom-[132px] lg:bottom-[92px] flex items-center gap-5 pointer-events-none">
+    <div class="text-right hidden sm:block">
+      <div class="label" style="font-size:9.5px">Blanchiment de serres</div>
+      <div class="serif text-[19px] leading-tight mt-1">Voir la mission</div>
+    </div>
+    <span class="play"><svg width="18" height="18" viewBox="0 0 24 24" style="margin-left:3px"><path d="M8 5v14l11-7z"/></svg></span>
+  </div>
+</section>
+
+<!-- ═══ INTRO ═══ -->
+<section class="mx-auto max-w-[1500px] px-6 lg:px-12 py-24 lg:py-32">
+  <div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
+    <div class="lg:col-span-6 rv">
+      <div class="label mb-7">Le principe</div>
+      <h2 class="serif text-[32px] lg:text-[46px] leading-[1.04]">Traiter juste,<br>là où il faut,<br>quand il faut.</h2>
+      <p class="mt-8 text-[15px] leading-relaxed" style="color:var(--ink-2);max-width:52ch">
+        Un drone agricole ne remplace pas l'exploitant : il lui donne de la portée. Sur les terrains réunionnais — ravines, fortes pentes, accès étroits — la pulvérisation aérienne évite le tassement du sol, supprime les passages de roues et permet d'intervenir après la pluie, sans attendre que la parcelle sèche.
+      </p>
+      <p class="mt-5 text-[15px] leading-relaxed" style="color:var(--ink-2);max-width:52ch">
+        Chaque vol suit un plan géoréférencé : hauteur, largeur de nappe, débit et vitesse sont calés sur la culture et le produit. Le drone répète la trajectoire au centimètre, vol après vol.
+      </p>
+    </div>
+    <div class="lg:col-span-5 lg:col-start-8 rv rv-d1">
+      <div class="spec">
+        <div class="serif text-[52px] leading-none">Pentes</div>
+        <p class="mt-3 text-[14px] leading-relaxed" style="color:var(--ink-2)">Intervention sur des terrains inaccessibles au matériel roulant.</p>
+      </div>
+      <div class="spec mt-10">
+        <div class="serif text-[52px] leading-none">Zéro tassement</div>
+        <p class="mt-3 text-[14px] leading-relaxed" style="color:var(--ink-2)">Aucun passage de roue : structure du sol et jeunes plants préservés.</p>
+      </div>
+      <div class="spec mt-10">
+        <div class="serif text-[52px] leading-none">Dose ciblée</div>
+        <p class="mt-3 text-[14px] leading-relaxed" style="color:var(--ink-2)">Application modulée par zone, guidée par la cartographie de vigueur.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRESTATIONS ═══ -->
+<section id="prestations" class="on-navy">
+  <div class="mx-auto max-w-[1500px] px-6 lg:px-12 py-24 lg:py-32">
+    <div class="pb-14 rv">
+      <span class="bar mb-8"></span>
+      <div class="label mb-6">Prestations</div>
+      <h2 class="serif text-[34px] lg:text-[52px] leading-[1.02] max-w-[720px]">Ce que nous faisons voler.</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-x-14 gap-y-12">
+      <article class="rv border-t pt-8" style="border-color:var(--rule)">
+        <div class="num mb-5">01</div>
+        <h3 class="serif text-[28px] leading-tight">Épandage liquide</h3>
+        <p class="mt-4 text-[14.5px] leading-relaxed" style="color:var(--ink-2)">
+          Pulvérisation de produits phytosanitaires, biostimulants et engrais foliaires. Buses réglables, largeur de nappe adaptée à la hauteur de vol, dérive maîtrisée par vent modéré.
+        </p>
+        <div class="flex flex-wrap gap-2.5 mt-6">
+          <span class="chip">Canne à sucre</span><span class="chip">Maraîchage</span><span class="chip">Vergers</span>
+        </div>
+      </article>
+
+      <article class="rv rv-d1 border-t pt-8" style="border-color:var(--rule)">
+        <div class="num mb-5">02</div>
+        <h3 class="serif text-[28px] leading-tight">Épandage solide</h3>
+        <p class="mt-4 text-[14.5px] leading-relaxed" style="color:var(--ink-2)">
+          Granulés, engrais, semences et amendements. Trémie dédiée, débit asservi à la vitesse de déplacement pour une densité régulière sur toute la parcelle.
+        </p>
+        <div class="flex flex-wrap gap-2.5 mt-6">
+          <span class="chip">Engrais</span><span class="chip">Semis</span><span class="chip">Amendements</span>
+        </div>
+      </article>
+
+      <article class="rv border-t pt-8" style="border-color:var(--rule)">
+        <div class="num mb-5">03</div>
+        <h3 class="serif text-[28px] leading-tight">Blanchiment de serres</h3>
+        <p class="mt-4 text-[14.5px] leading-relaxed" style="color:var(--ink-2)">
+          Application du blanc d'ombrage sur toiture de serre, sans monter sur la structure. Plus rapide qu'une nacelle, sans risque de chute ni de casse de plaques.
+        </p>
+        <div class="flex flex-wrap gap-2.5 mt-6">
+          <span class="chip">Serres verre</span><span class="chip">Plastique</span><span class="chip">Lavage</span>
+        </div>
+      </article>
+
+      <article class="rv rv-d1 border-t pt-8" style="border-color:var(--rule)">
+        <div class="num mb-5">04</div>
+        <h3 class="serif text-[28px] leading-tight">Cartographie de vigueur</h3>
+        <p class="mt-4 text-[14.5px] leading-relaxed" style="color:var(--ink-2)">
+          Vol multispectral et calcul d'indices de végétation (NDVI). Repérage des zones en stress avant qu'elles ne soient visibles à l'œil, puis application modulée.
+        </p>
+        <div class="flex flex-wrap gap-2.5 mt-6">
+          <span class="chip">NDVI</span><span class="chip">Zones de stress</span><span class="chip">Suivi saisonnier</span>
+        </div>
+      </article>
+
+      <article class="rv border-t pt-8" style="border-color:var(--rule)">
+        <div class="num mb-5">05</div>
+        <h3 class="serif text-[28px] leading-tight">Comptage &amp; état des plants</h3>
+        <p class="mt-4 text-[14.5px] leading-relaxed" style="color:var(--ink-2)">
+          Orthophoto haute résolution de la parcelle pour estimer les manques, les repousses et l'homogénéité du couvert. Utile en constat d'assurance comme en pilotage de campagne.
+        </p>
+        <div class="flex flex-wrap gap-2.5 mt-6">
+          <span class="chip">Orthophoto</span><span class="chip">Constat</span>
+        </div>
+      </article>
+
+      <article class="rv rv-d1 border-t pt-8" style="border-color:var(--rule)">
+        <div class="num mb-5">06</div>
+        <h3 class="serif text-[28px] leading-tight">Suivi de campagne</h3>
+        <p class="mt-4 text-[14.5px] leading-relaxed" style="color:var(--ink-2)">
+          Passages répétés sur la même trajectoire pour comparer l'évolution d'une parcelle dans le temps. Les vols sont archivés et rejouables à l'identique.
+        </p>
+        <div class="flex flex-wrap gap-2.5 mt-6">
+          <span class="chip">Trajectoires rejouables</span><span class="chip">Comparatif</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LIVRABLES + VISUELS ═══ -->
+<section class="mx-auto max-w-[1500px] px-6 lg:px-12 py-24 lg:py-32">
+  <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+    <div class="lg:col-span-4 rv">
+      <div class="label mb-7">Livrables</div>
+      <h2 class="serif text-[32px] lg:text-[44px] leading-[1.04]">Ce que vous recevez.</h2>
+      <div class="mt-9 flex flex-col gap-4 text-[14.5px]" style="color:var(--ink-2)">
+        <div class="flex gap-4"><span style="color:var(--accent)">→</span> Rapport de mission (surface traitée, dose, conditions météo)</div>
+        <div class="flex gap-4"><span style="color:var(--accent)">→</span> Log de vol géoréférencé, archivé et rejouable</div>
+        <div class="flex gap-4"><span style="color:var(--accent)">→</span> Orthophoto de la parcelle</div>
+        <div class="flex gap-4"><span style="color:var(--accent)">→</span> Carte d'indices de végétation (option multispectral)</div>
+        <div class="flex gap-4"><span style="color:var(--accent)">→</span> Carte de préconisation par zone</div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 lg:col-start-6 grid sm:grid-cols-2 gap-4 lg:gap-5">
+      <div class="grp rv sm:col-span-2">
+        <div class="frame aspect-[16/9] relative">
+          <image-slot id="agri1" placeholder="ÉPANDAGE · CANNE À SUCRE" style="width:100%;height:100%;display:block"></image-slot>
+          <div class="absolute left-5 bottom-4 z-10 label" style="font-size:9.5px">Le Tampon · épandage</div>
+        </div>
+      </div>
+      <div class="grp rv rv-d1">
+        <div class="frame aspect-[4/3] relative">
+          <image-slot id="agri2" placeholder="SERRE · BLANCHIMENT" style="width:100%;height:100%;display:block"></image-slot>
+          <div class="absolute left-5 bottom-4 z-10 label" style="font-size:9.5px">Petite-Île · serres</div>
+        </div>
+      </div>
+      <div class="grp rv rv-d2">
+        <div class="frame aspect-[4/3] relative">
+          <image-slot id="agri3" placeholder="CARTE NDVI · PARCELLE" style="width:100%;height:100%;display:block"></image-slot>
+          <div class="absolute left-5 bottom-4 z-10 label" style="font-size:9.5px">Cartographie de vigueur</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DÉROULÉ ═══ -->
+<section class="on-blue">
+  <div class="mx-auto max-w-[1500px] px-6 lg:px-12 py-24 lg:py-32">
+    <div class="pb-14 rv">
+      <span class="bar mb-8"></span>
+      <div class="label mb-6">Déroulé d'une mission</div>
+      <h2 class="serif text-[34px] lg:text-[50px] leading-[1.02] max-w-[720px]" style="color:var(--ink)">De l'appel au rapport, en quatre temps.</h2>
+    </div>
+    <div class="grid md:grid-cols-4 gap-x-8 gap-y-12">
+      <div class="rv border-t pt-7" style="border-color:var(--rule)">
+        <div class="num mb-5" style="color:#141c3a">I</div>
+        <h3 class="serif text-[25px] leading-tight" style="color:var(--ink)">Diagnostic parcelle</h3>
+        <p class="mt-3.5 text-[14px] leading-relaxed" style="color:var(--ink-2)">Culture, surface, produit envisagé, accès, contraintes de voisinage. Devis sous 48 h.</p>
+      </div>
+      <div class="rv rv-d1 border-t pt-7" style="border-color:var(--rule)">
+        <div class="num mb-5" style="color:#141c3a">II</div>
+        <h3 class="serif text-[25px] leading-tight" style="color:var(--ink)">Plan de vol</h3>
+        <p class="mt-3.5 text-[14px] leading-relaxed" style="color:var(--ink-2)">Bornage GPS de la zone, hauteur et largeur de nappe, obstacles relevés, créneau météo.</p>
+      </div>
+      <div class="rv rv-d2 border-t pt-7" style="border-color:var(--rule)">
+        <div class="num mb-5" style="color:#141c3a">III</div>
+        <h3 class="serif text-[25px] leading-tight" style="color:var(--ink)">Traitement</h3>
+        <p class="mt-3.5 text-[14px] leading-relaxed" style="color:var(--ink-2)">Vol exécuté par télépilote certifié, remplissage et rinçage sur zone dédiée.</p>
+      </div>
+      <div class="rv rv-d3 border-t pt-7" style="border-color:var(--rule)">
+        <div class="num mb-5" style="color:#141c3a">IV</div>
+        <h3 class="serif text-[25px] leading-tight" style="color:var(--ink)">Rapport</h3>
+        <p class="mt-3.5 text-[14px] leading-relaxed" style="color:var(--ink-2)">Surface réelle, dose appliquée, conditions du jour. Archivage du vol.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="mx-auto max-w-[1500px] px-6 lg:px-12 py-24 lg:py-32">
+  <div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
+    <div class="lg:col-span-4 rv">
+      <div class="label mb-7">Questions fréquentes</div>
+      <h2 class="serif text-[32px] lg:text-[44px] leading-[1.04]">Avant de nous appeler.</h2>
+      <p class="mt-7 text-[14.5px] leading-relaxed" style="color:var(--ink-2);max-width:34ch">
+        Une question qui n'est pas ici ? Le téléphone reste le plus rapide.
+      </p>
+      <a href="tel:+262692285280" class="serif text-[26px] mt-6 inline-block ul">+262 692 285 280</a>
+    </div>
+    <div class="lg:col-span-7 lg:col-start-6 rv rv-d1">
+      <details class="fq"><summary><span class="text-[16.5px]">Quelle surface minimum pour que ce soit intéressant ?</span></summary>
+        <div class="a">Il n'y a pas de seuil strict : ce qui compte, c'est le temps d'installation par rapport au temps de vol. En pratique, une parcelle isolée de petite taille reste pertinente si le terrain est difficile d'accès ou en forte pente. Pour de très petites surfaces, nous regroupons plusieurs interventions sur une même tournée pour partager le déplacement.</div>
+      </details>
+      <details class="fq"><summary><span class="text-[16.5px]">Fournissez-vous le produit à épandre ?</span></summary>
+        <div class="a">Non. Le produit est fourni par l'exploitant, qui en reste responsable — homologation, dose, délai avant récolte. Nous assurons l'application conformément à vos préconisations et aux règles applicables au traitement aérien.</div>
+      </details>
+      <details class="fq"><summary><span class="text-[16.5px]">Et si le vent se lève le jour prévu ?</span></summary>
+        <div class="a">La mission est reportée. La pulvérisation demande une fenêtre météo précise : au-delà d'un certain vent, la dérive rend l'application inexploitable et potentiellement problématique pour les parcelles voisines. Nous surveillons le créneau et vous prévenons la veille.</div>
+      </details>
+      <details class="fq"><summary><span class="text-[16.5px]">Faut-il prévenir les voisins ?</span></summary>
+        <div class="a">Oui, c'est le réflexe à avoir, en particulier en zone habitée ou près d'une exploitation en agriculture biologique. Nous vous indiquons la zone tampon à respecter et l'emprise réelle du vol, pour que l'information transmise soit juste.</div>
+      </details>
+      <details class="fq"><summary><span class="text-[16.5px]">Combien de temps prend le blanchiment d'une serre ?</span></summary>
+        <div class="a">Cela dépend de la surface de toiture et du produit, mais l'ordre de grandeur est d'une demi-journée pour une serre standard, montage et rinçage compris — sans monter sur la structure, donc sans échafaudage ni nacelle.</div>
+      </details>
+      <details class="fq"><summary><span class="text-[16.5px]">Intervenez-vous sur toute l'île ?</span></summary>
+        <div class="a">Oui, sur l'ensemble du département. Les déplacements longs sont intégrés au devis ; nous regroupons quand c'est possible plusieurs missions sur un même secteur dans la semaine.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA / DEVIS ═══ -->
+<section id="devis" class="border-t" style="border-color:var(--rule)">
+  <div class="mx-auto max-w-[1500px] px-6 lg:px-12 py-24 lg:py-32">
+    <div class="grid lg:grid-cols-12 gap-14 lg:gap-8">
+      <div class="lg:col-span-5 rv">
+        <span class="bar mb-8"></span>
+        <h2 class="serif text-[40px] lg:text-[64px] leading-[.98]">Parlons de<br>votre <em class="italic" style="color:var(--accent)">parcelle</em>.</h2>
+        <p class="mt-8 text-[15px] leading-relaxed" style="color:var(--ink-2);max-width:36ch">
+          Donnez-nous la culture, la surface et la commune : nous revenons avec un devis chiffré sous 48 h.
+        </p>
+        <div class="mt-11 flex flex-col gap-6">
+          <a href="tel:+262692285280" class="serif text-[28px] lg:text-[36px] leading-none ul">+262 692 285 280</a>
+          <a href="https://wa.me/262692285280" class="label ul" style="color:var(--accent)">WhatsApp · réponse rapide →</a>
+          <a href="mailto:vgnconcept@gmail.com" class="label ul">vgnconcept@gmail.com</a>
+        </div>
+      </div>
+      <form class="lg:col-span-6 lg:col-start-7 rv rv-d1" onsubmit="event.preventDefault();this.reset();document.getElementById('sent').hidden=false">
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-10">
+          <label class="block"><span class="label" style="font-size:9.5px">Nom</span><input class="fld mt-1" placeholder="Votre nom" required></label>
+          <label class="block"><span class="label" style="font-size:9.5px">Téléphone</span><input class="fld mt-1" placeholder="0692…" required></label>
+          <label class="block"><span class="label" style="font-size:9.5px">Prestation</span>
+            <select class="fld mt-1">
+              <option>Épandage liquide</option><option>Épandage solide</option><option>Blanchiment de serres</option>
+              <option>Cartographie NDVI</option><option>Suivi de campagne</option><option>Autre</option>
+            </select>
+          </label>
+          <label class="block"><span class="label" style="font-size:9.5px">Commune</span><input class="fld mt-1" placeholder="Le Tampon, Petite-Île…"></label>
+          <label class="block sm:col-span-2"><span class="label" style="font-size:9.5px">Culture &amp; surface</span><textarea class="fld mt-1" rows="4" placeholder="Ex. 12 ha de canne en pente, produit déjà en stock, intervention souhaitée en octobre…"></textarea></label>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-6 mt-12">
+          <span class="label" style="font-size:9.5px;color:var(--ink-3)">Réponse sous 48 h · devis gratuit</span>
+          <button type="submit" class="pill pill-solid">Envoyer</button>
+        </div>
+        <p id="sent" hidden class="label mt-6" style="color:var(--accent)">Merci — nous revenons vers vous sous 48 h.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AUTRES SERVICES ═══ -->
+<section class="border-t" style="border-color:var(--rule)">
+  <div class="mx-auto max-w-[1500px] px-6 lg:px-12 py-20">
+    <div class="label mb-10 rv">Nos autres chapitres</div>
+    <div class="grid md:grid-cols-2 gap-5">
+      <a href="service-scan-3d.html" class="grp rv">
+        <div class="frame aspect-[16/9] relative">
+          <img src="https://i.ytimg.com/vi/F0zUQ0flwvQ/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/F0zUQ0flwvQ/hqdefault.jpg'" alt="" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute left-6 bottom-6 z-10">
+            <div class="label" style="font-size:9.5px">Chapitre II</div>
+            <div class="serif text-[26px] mt-1">Numérisation 3D · Scan to BIM</div>
+          </div>
+        </div>
+      </a>
+      <a href="service-audiovisuel.html" class="grp rv rv-d1">
+        <div class="frame aspect-[16/9] relative">
+          <img src="https://i.ytimg.com/vi/iB9RfGEdKOs/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/iB9RfGEdKOs/hqdefault.jpg'" alt="" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute left-6 bottom-6 z-10">
+            <div class="label" style="font-size:9.5px">Chapitre III</div>
+            <div class="serif text-[26px] mt-1">Production audiovisuelle</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="border-t" style="border-color:var(--rule)">
+  <div class="mx-auto max-w-[1500px] px-6 lg:px-12 py-16 lg:py-20">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-3.5">
+          <img class="mark" style="width:46px;height:46px" src="assets/vgn-mark.png" alt="">
+          <div>
+            <div class="serif text-[25px] leading-none">VGN Concept</div>
+            <div class="label mt-2" style="font-size:9px;letter-spacing:.3em">Mr Drone · 974</div>
+          </div>
+        </div>
+        <p class="mt-7 text-[13.5px] leading-relaxed" style="color:var(--ink-2);max-width:32ch">
+          Studio drone indépendant basé à La Réunion. Production audiovisuelle, agriculture de précision, relevés 3D. Télépilote certifié DGAC.
+        </p>
+      </div>
+      <div class="lg:col-span-2 lg:col-start-6">
+        <div class="label mb-6" style="color:var(--ink-2)">Services</div>
+        <div class="flex flex-col gap-3 text-[14px]" style="color:var(--ink-2)">
+          <a href="service-agriculture.html">Agriculture</a><a href="service-scan-3d.html">Numérisation 3D</a><a href="service-audiovisuel.html">Audiovisuel</a>
+        </div>
+      </div>
+      <div class="lg:col-span-2">
+        <div class="label mb-6" style="color:var(--ink-2)">Studio</div>
+        <div class="flex flex-col gap-3 text-[14px]" style="color:var(--ink-2)">
+          <a href="VGN%20Concept%20-%20Cinematique.html#studio">À propos</a><a href="VGN%20Concept%20-%20Cinematique.html#photogrammes">Photogrammes</a><a href="#devis">Devis</a><a href="https://linktr.ee/VgnConcept">Linktree</a>
+        </div>
+      </div>
+      <div class="lg:col-span-3">
+        <div class="label mb-6" style="color:var(--ink-2)">Contact</div>
+        <div class="flex flex-col gap-3 text-[14px]" style="color:var(--ink-2)">
+          <a href="tel:+262692285280" class="serif text-[22px]" style="color:var(--ink)">+262 692 285 280</a>
+          <a href="mailto:vgnconcept@gmail.com">vgnconcept@gmail.com</a>
+          <a href="https://wa.me/262692285280">WhatsApp</a>
+          <a href="#">Instagram · @mr.drone_vgnconcept</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rule"></div>
+  <div class="mx-auto max-w-[1500px] px-6 lg:px-12 py-8">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 label" style="font-size:9.5px;color:var(--ink-3)">
+      <span>© 2026 VGN Concept — Île de La Réunion</span>
+      <div class="flex flex-wrap gap-x-8 gap-y-2"><a href="#">Mentions légales</a><a href="#">Confidentialité</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+  <div class="on-navy">
+    <div class="mx-auto max-w-[1500px] px-6 lg:px-12 py-5 text-center">
+      <p class="label" style="font-size:10px;color:#e4e8f7">
+        Réalisé par <a href="#" class="ul ul-on" style="color:var(--accent)">Taochy Agency</a> — Agence de communication de l'Océan Indien
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ MODAL ═══ -->
+<div id="mod" class="fixed inset-0 z-[70] flex items-center justify-center p-4 sm:p-10" hidden role="dialog" aria-modal="true" aria-label="Lecteur">
+  <button id="modX" class="absolute top-6 right-6 w-11 h-11 rounded-full flex items-center justify-center" style="border:1px solid var(--rule)" aria-label="Fermer">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <div class="w-full max-w-[1200px] aspect-video bg-black">
+    <iframe id="modF" class="w-full h-full" src="" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</div>
+
+<a href="https://wa.me/262692285280" id="fab" class="fixed top-1/2 -translate-y-1/2 right-6 z-[55] rounded-full items-center justify-center" style="width:52px;height:52px;background:var(--accent);color:#0a0a0a" aria-label="WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+</a>
+
+<!-- ═══ MOBILE STICKY BAR ═══ -->
+<nav id="mobar" aria-label="Navigation rapide">
+  <a href="VGN%20Concept%20-%20Cinematique.html">
+    <svg viewBox="0 0 24 24"><path d="M3 10.5 12 4l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Accueil
+  </a>
+  <a href="#prestations">
+    <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Presta
+  </a>
+  <a href="tel:+262692285280">
+    <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9z"/></svg>Appeler
+  </a>
+  <a href="#devis" class="hi">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5"/></svg>Devis
+  </a>
+</nav>
+
+<script src="image-slot.js"></script>
+<script src="vgn.js"></script>
+</body>
+</html>
